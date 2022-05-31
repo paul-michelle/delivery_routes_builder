@@ -17,6 +17,10 @@ def drop_points_string_to_tuples(drop_points_string: str) -> List[Tuple[int, int
     return drop_points
 
 
+def find_drop_points_out_of_scope(x: int, y: int, drop_points: List[Tuple[int, int]]):
+    return list(filter(lambda coord_pair: (coord_pair[0] > x or coord_pair[1] > y), drop_points))
+
+
 def parse_plot_description(plot_descr: str, pattern: str = SINGLE_DIGIT_X_n_Y_PATTERN) -> Any:
     plot_descr_valid_pattern = re.compile(pattern=pattern)
     plot_descr_matched = plot_descr_valid_pattern.match(plot_descr)
@@ -38,6 +42,12 @@ def parse_plot_description(plot_descr: str, pattern: str = SINGLE_DIGIT_X_n_Y_PA
         print('Coordinates of at least one drop point expected')
         return
     drop_points: List[Tuple[int, int]] = drop_points_string_to_tuples(drop_points_string)
+
+    drop_points_out_of_scope = find_drop_points_out_of_scope(plot_x_size, plot_y_size, drop_points)
+    if drop_points_out_of_scope:
+        print(f'Drop point(s) situated out of specified scope: {drop_points_out_of_scope}')
+        return
+
     print(plot_x_size, plot_y_size, drop_points)
 
 
