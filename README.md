@@ -1,4 +1,4 @@
-# PIZZABOT
+# DELIVERY ROUTES BUILDER
 #### Short description
 The program receives coordinates of drop points (delivery destination points) and calculates the route 
 as a concatenated string of N's (North), S's (South), E's (East), W's (West), and 'D's (for Drop Point).
@@ -25,7 +25,7 @@ DNDENNDEDEDEDNDDNND
 In the terminal window mkdir and cd into it.
 To download and unpack the tarball, issue:
 ```
-wget -c https://github.com/paul-michelle/pizzabot/raw/master/pizzabot.tar.gz -O - | tar -xz
+wget -c https://github.com/paul-michelle/delivery_routes_builder/raw/master/pizzabot.tar.gz -O - | tar -xz
 ```
 Copy and paste the command from the example section above, to test the program.
 Pass your own plot description, to get the route.
