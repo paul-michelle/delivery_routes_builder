@@ -59,7 +59,7 @@ class RouteBuilder:
 
         return drop_points
 
-    def build_route(self) -> Optional[str]:
+    def build_route(self) -> str:
         drop_points = self.parse_and_validate_plot_description()
 
         route = ''

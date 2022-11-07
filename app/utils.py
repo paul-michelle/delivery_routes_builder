@@ -18,7 +18,7 @@ def drop_points_string_to_tuples(drop_points_string: str) -> List['Point']:
     return drop_points
 
 
-def find_drop_points_out_of_scope(x: int, y: int, points: List[Tuple[int, int]]) -> List[Optional['Point']]:
+def find_drop_points_out_of_scope(x: int, y: int, points: List['Point']) -> List[Optional['Point']]:
     return list(filter(lambda coord_pair: (coord_pair[0] > x or coord_pair[1] > y), points))
 
 
